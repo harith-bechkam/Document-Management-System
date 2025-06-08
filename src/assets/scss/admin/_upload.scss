@@ -1,0 +1,165 @@
+.uploadcontainer {
+    z-index: 100;
+    position: absolute;
+    bottom: calc(0px + var(--offset, 0px));
+    right: 0;
+    // width: 100%;
+    max-height: 25rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+
+.uploadWrapper {
+    // z-index: 100;
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    // background-color: white;
+    // width: 25rem;
+    // max-height: 25rem;
+    // border-top-left-radius: 8px;
+    // border-top-right-radius: 8px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    // transition: max-height 0.3s ease;
+    // overflow: hidden;
+
+    display: block;
+    float: right;
+    background: #fff;
+    // margin: 0px 10px;
+    width: 25rem;
+    z-index: 100;
+    max-height: 25rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+
+.uploadHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $accent-color;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.uploadItemsWrapper {
+    padding: 5px;
+    max-height: 20rem;
+    overflow:hidden;
+  
+}
+
+.tab-content .uploadItemsWrapper {
+    max-height: 18rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.wrapperItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #f1f1f1;
+    }
+}
+
+.leftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.progressBar {
+    width: 100%;
+    height: 8px;
+    background-color: lightgray;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.progressBar>div {
+    height: 100%;
+    background-color: lightgreen;
+    border-radius: 20px;
+    transition: width 1s;
+}
+
+.rightSide {
+    display: flex;
+    align-items: center;
+}
+
+.rightSide>span {
+    margin-left: 10px;
+}
+
+
+
+//Modal
+.upload .modal-dialog {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .upload .modal-content {
+    display: flex;
+    flex-direction: column;
+    // max-height: 90vh;
+  }
+  
+  .upload .modal-body {
+    // overflow-y: auto; 
+    flex-grow: 1;
+    padding: 1.8em 3em 0;
+    // scrollbar-width: thin;
+    // scrollbar-color: #888 #f1f1f1;
+  }
+  
+  .upload .modal-body::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  .upload .modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+  }
+  
+  .upload .modal-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  .upload .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  .upload .modal-footer {
+    position: sticky;
+    bottom: 0;
+    // background-color: white;
+    z-index: 10;
+    border-top: none !important;
+  }
+  

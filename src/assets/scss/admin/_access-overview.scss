@@ -1,0 +1,7 @@
+.outline {
+    outline: 1px solid $accent-color;
+}
+
+.parent .border-top:nth-child(even) {
+    border-top: 1px solid $accent-color;
+}

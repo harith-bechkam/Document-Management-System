@@ -1,0 +1,87 @@
+.react-form-builder {}
+
+.react-form-builder-preview {
+    position: relative;
+    flex: 3;
+    min-height: 500px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.react-form-builder-toolbar {
+    flex: 1;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+.react-form-builder .react-form-builder-toolbar {
+    margin-top: 0;
+}
+
+.form-builder-footer {
+    float: right;
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+.form-generator-footer {
+    direction: rtl;
+}
+
+// -------------------------------------------------------
+//form Lib
+// .badge-secondary {
+//     color: #fff;
+//     background-color: #6c757d;
+// }
+
+// .badge-danger {
+//     color: #fff;
+//     background-color: #dc3545 !important;
+// }
+.formbuilder .btn-secondary {
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+.formbuilder .btn-primary{
+    font-size: 13px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+
+    color: #fff;
+    background-color: #6576ff;
+    border-color: #6576ff;
+
+    &:hover {
+        color: #fff;
+        background-color: #5664d9;
+        border-color: #515ecc;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(124, 139, 255, 0.5);
+    }
+
+    &:active {
+        color: #fff;
+        background-color: #515ecc;
+        border-color: #4c59bf;
+        box-shadow: inset 0 3px 5px rgba(16, 25, 36, 0.125);
+    }
+
+    &:disabled {
+        color: #fff;
+        background-color: #6576ff;
+        border-color: #6576ff;
+    }
+}
+
+// -------------------------------------------------------
+
+.previewBtn {
+    direction: rtl;
+    margin: 1rem;
+}

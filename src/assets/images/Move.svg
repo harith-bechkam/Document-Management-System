@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+        <path
+          fill="#eff1ff"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M68.14 80.86l-37.93-8.17a5.93 5.93 0 01-4.57-7l12.26-56A6 6 0 0145 5.14l28.18 6.07 12.32 18.3-10.26 46.82a6 6 0 01-7.1 4.53z"
+        ></path>
+        <path
+          fill="#eff1ff"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M73 12.18L69.83 26.66 85.37 30.08"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M66.26 71.15L29.05 82.46a6 6 0 01-7.46-4L4.76 23.15a6 6 0 014-7.47l27.64-8.4 19.76 10.11 14.08 46.29a6 6 0 01-3.98 7.47z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M36.7 8.22L41.05 22.53 56.33 17.96"
+        ></path>
+        <path
+          fill="#fff"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M68 85H29a6 6 0 01-6-6V21a6 6 0 016-6h29l16 15.47V79a6 6 0 01-6 6z"
+        ></path>
+        <path
+          fill="#fff"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M58 16L58 31 74 31.07"
+        ></path>
+        <path
+          fill="none"
+          stroke="#c4cefe"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M45 41L61 41"
+        ></path>
+        <path
+          fill="none"
+          stroke="#c4cefe"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M35 48L61 48"
+        ></path>
+        <path
+          fill="none"
+          stroke="#c4cefe"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M35 55L61 55"
+        ></path>
+        <path
+          fill="none"
+          stroke="#c4cefe"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M35 63L61 63"
+        ></path>
+        <path
+          fill="none"
+          stroke="#c4cefe"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M35 69L51 69"
+        ></path>
+        <text
+          fill="#6576ff"
+          fontFamily="Nunito-Black, Nunito Black"
+          fontSize="9.31"
+          transform="matrix(.99 0 0 1 34.54 43.18)"
+        >
+          $
+        </text>
+      </svg>

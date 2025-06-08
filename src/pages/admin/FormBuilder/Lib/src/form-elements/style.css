@@ -1,0 +1,32 @@
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+  }
+  
+  .custom-select {
+    appearance: none;
+    width: 100%;
+    padding: 10px;
+    padding-right: 35px; 
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij4KICA8cGF0aCBkPSJNNyA5bDEgMSA0LTQgNC00IDEgMS02IDYtNi02eiIgZmlsbD0iIzY2NiIvPgo8L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Optional: Add a hover effect */
+  .custom-select:hover {
+    border-color: #888;
+  }
+  

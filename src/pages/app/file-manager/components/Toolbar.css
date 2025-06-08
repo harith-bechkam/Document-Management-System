@@ -1,0 +1,40 @@
+/* .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 20px;
+    max-width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem !important;
+    position: absolute;
+    top: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0px 35px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .toolbar-icon {
+    margin: 0 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .trash{
+    color: red;
+  }
+
+  .toolbar-selection{
+    margin-right: 0.5rem;
+    margin-bottom: 0 !important;
+    font-size: medium;
+    font-weight: bold;
+  }
+   */
+
+
+   

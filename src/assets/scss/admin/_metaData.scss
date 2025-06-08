@@ -1,0 +1,283 @@
+.toggle-wrap {
+    // &.nk-block-tools-toggle {
+    //     width: auto; // Default width for mobile and small screens
+    // }
+
+    &.apply-width {
+
+        // Media query for larger screens
+        @media (min-width: 768px) {
+            // width: 50vh;
+        }
+    }
+}
+
+.listOptions {
+    margin-top: 1rem;
+}
+
+.listOptions-icons {
+    display: flex;
+    align-items: center;
+}
+
+.plusclass {
+    width: 2rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.deleteclass {
+    width: 2rem;
+    cursor: pointer;
+}
+
+
+/*
+---------------------------
+    METADATA APPROVAL
+---------------------------
+*/
+
+.metaapproval_table-box {
+    // overflow: none !important;
+    // min-height: 90vh;
+}
+
+
+.metadata-approval {
+    display: flex;
+    gap: 20px;
+}
+
+.table-section {
+    flex: 1;
+}
+
+.details-section {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.approve {
+    background-color: green;
+    color: white;
+}
+
+.reject {
+    background-color: red;
+    color: white;
+}
+
+.prevnextbtn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    padding-left: 1rem;
+}
+
+.nextbtn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    padding-right: 1rem;
+}
+
+.fileLoader {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileLoaderTopdiv {
+    height: "90vh";
+    border: '1px solid #ccc';
+    margin-top: 1rem;
+}
+
+.fileiframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.metatable-tooltip {
+    position: absolute !important;
+    z-index: 9999;
+    font-weight: lighter;
+    font-family: var(--bs-body-font-family);
+    max-width: 400px;
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    max-height: none !important;
+    overflow: visible !important;
+
+    /* Optional: if your content still cuts off */
+    height: auto !important;
+}
+
+.metatable-tippy-tooltip {
+    z-index: 9999 !important;
+    max-width: 400px;
+}
+
+.metatable-tippy-tooltip .tippy-content {
+    // font-weight: lighter;
+    font-family: var(--bs-body-font-family);
+    white-space: pre-wrap;
+    word-break: break-word;
+    text-align: left;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+
+
+.custom-table-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.custom-table-body {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.custom-table-body table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.custom-table-body th,
+.custom-table-body td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-search.search-wrap.active {
+    display: block;
+}
+
+.card-search.search-wrap {
+    display: none;
+}
+
+.custom-sort span {
+    margin-left: 5px;
+}
+
+//COL'S
+.sub-text span {
+    white-space: break-spaces;
+}
+
+.nk-tb-col-check {
+    width: 1rem;
+}
+
+.consent_metadata_name {}
+
+.consent_primary_metadata_doc_type {
+    width: 20px;
+}
+
+.consent_secondary_metadata_doc_type {}
+
+.consent_metadata_keywords {}
+
+.consent_metadata_notes {}
+
+.metaupload {
+    font-family: var(--bs-body-font-family);
+    border-radius: 8px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #bbb #f1f1f1;
+
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.custom-tab-content {
+    overflow: hidden;
+    height: calc(100% - 45px);
+}
+.metadatacontentwrapper{
+    overflow: hidden;
+    height: calc(100% - 125px);
+}
+.custom-tab-pane {
+    height: 100%;
+    overflow: auto;
+}
+
+.metaapproval-table .sub-text {
+    font-size: 13px;
+}
+
+.metaapproval-badge-custom {
+    // transform: translate(-50%, -50%);
+    // right: 0;
+    // top: 0;
+    border-radius: 50%;
+}
+.metadatacontentwrapper{
+    
+}
