@@ -16,11 +16,30 @@ import {
 import { Row, Col } from "reactstrap";
 
 const NumberSpinner = () => {
+  const spinnerConfigs = [
+    {
+      label: "Number Spinner Basic",
+      props: { defaultVal: 5, color: "light", outline: true },
+    },
+    {
+      label: "Number Spinner Step (10)",
+      props: { defaultVal: 50, color: "light", outline: true, step: 10 },
+    },
+    {
+      label: "Number Spinner Min Max (15-80)",
+      props: { defaultVal: 20, color: "light", outline: true, min: 15, max: 80 },
+    },
+    {
+      label: "Number Spinner with Primary Button",
+      props: { defaultVal: 20, color: "primary" },
+    },
+  ];
+
   return (
-    <React.Fragment>
-      <Head title="Number Spinner"></Head>
+    <>
+      <Head title="Number Spinner" />
       <Content page="component">
-        <BlockHead size="lg" wide="sm">
+        <BlockHead size="lg">
           <BlockHeadContent>
             <BackTo link="/components" icon="arrow-left">
               Components
@@ -38,37 +57,23 @@ const NumberSpinner = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Number Spinner</BlockTitle>
-              <p>With number spinner component you can use min, max, step and many other props.</p>
+              <p>With number spinner component you can use min, max, step, and many other props.</p>
             </BlockHeadContent>
           </BlockHead>
+
           <PreviewCard>
             <Row className="g-4">
-              <Col sm="6">
-                <div className="form-group">
-                  <label className="form-label">Number Spinner Basic</label>
-                  <NSComponent defaultVal={5} color="light" outline />
-                </div>
-              </Col>
-              <Col sm="6">
-                <div className="form-group">
-                  <label className="form-label">Number Spinner Step (10)</label>
-                  <NSComponent defaultVal={50} color="light" outline step={10} />
-                </div>
-              </Col>
-              <Col sm="6">
-                <div className="form-group">
-                  <label className="form-label">Number Spinner Min Max (15-80)</label>
-                  <NSComponent defaultVal={20} color="light" outline max={80} min={15} />
-                </div>
-              </Col>
-              <Col sm="6">
-                <div className="form-group">
-                  <label className="form-label">Number Spinner with Primary Button</label>
-                  <NSComponent defaultVal={20} color="primary" />
-                </div>
-              </Col>
+              {spinnerConfigs.map((config, index) => (
+                <Col sm="6" key={index}>
+                  <div className="form-group">
+                    <label className="form-label">{config.label}</label>
+                    <NSComponent {...config.props} />
+                  </div>
+                </Col>
+              ))}
             </Row>
           </PreviewCard>
+
           <CodeBlock language="jsx">
             {`import NSComponent from "../../components/Component";
 
@@ -87,58 +92,45 @@ const NumberSpinner = () => {
                 <td>
                   <code>max={`{number}`}</code>
                 </td>
-                <td>
-                  Use <code>{`{number}`}</code> with <code>max</code> props to specify the max limit for the input.
-                </td>
+                <td>Specifies the max limit for the input.</td>
               </tr>
               <tr>
                 <td>
                   <code>min={`{number}`}</code>
                 </td>
-                <td>
-                  Use <code>{`{number}`}</code> with <code>min</code> props to specify the min limit for the input.
-                </td>
+                <td>Specifies the min limit for the input.</td>
               </tr>
               <tr>
                 <td>
                   <code>step={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>step</code> props to specify the number with which to
-                  increament or decreament.
+                  Specifies the number with which to increment or decrement the value.
                 </td>
               </tr>
               <tr>
                 <td>
                   <code>outline={`{boolean}`}</code>
                 </td>
-                <td>
-                  Use <code>{`{boolean}`}</code> with <code>outline</code> props to specify if outline on button is
-                  needed.
-                </td>
+                <td>Determines whether an outline is shown on the button.</td>
               </tr>
               <tr>
                 <td>
                   <code>color={`{color}`}</code>
                 </td>
-                <td>
-                  Use <code>{`{color}`}</code> with <code>color</code> props to specify the color of the button.
-                </td>
+                <td>Specifies the color of the button.</td>
               </tr>
               <tr>
                 <td>
                   <code>defaultVal={`{number}`}</code>
                 </td>
-                <td>
-                  Use <code>{`{number}`}</code> with <code>defaultVal</code> props to specify any default value of the
-                  input.
-                </td>
+                <td>Specifies the default value of the input.</td>
               </tr>
             </tbody>
           </PreviewTable>
         </Block>
       </Content>
-    </React.Fragment>
+    </>
   );
 };
 
