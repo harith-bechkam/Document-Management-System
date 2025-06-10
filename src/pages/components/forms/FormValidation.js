@@ -13,11 +13,27 @@ import {
 } from "../../../components/Component";
 
 const FormValidation = () => {
+  const renderValidationBlock = (title, description, formId, alter = false) => (
+    <Block size="lg">
+      <BlockHead>
+        <BlockHeadContent>
+          <BlockTitle tag="h5">{title}</BlockTitle>
+          <BlockDes>
+            <p>{description}</p>
+          </BlockDes>
+        </BlockHeadContent>
+      </BlockHead>
+      <PreviewCard>
+        <FormValidationComponent id={formId} {...(alter && { alter })} />
+      </PreviewCard>
+    </Block>
+  );
+
   return (
-    <React.Fragment>
-      <Head title="Form Validation"></Head>
+    <>
+      <Head title="Form Validation" />
       <Content page="component">
-        <BlockHead size="lg" wide="sm">
+        <BlockHead size="lg">
           <BlockHeadContent>
             <BackTo link="/components" icon="arrow-left">
               Components
@@ -27,46 +43,32 @@ const FormValidation = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                With validation using the react-hook-form package, you can simply add validation on clientside before
-                submit form. Look up the{" "}
+                With validation using the <strong>react-hook-form</strong> package, you can add client-side validation
+                before submitting the form. See the{" "}
                 <a target="_blank" rel="noreferrer" href="https://react-hook-form.com/">
-                  documentation
+                  official documentation
                 </a>{" "}
-                for further details
+                for more details.
               </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
 
-        <Block size="lg">
-          <BlockHead>
-            <BlockHeadContent>
-              <BlockTitle tag="h5">Validation - Regular Style</BlockTitle>
-              <BlockDes>
-                <p>Below example helps you to build your own form nice way.</p>
-              </BlockDes>
-            </BlockHeadContent>
-          </BlockHead>
-          <PreviewCard>
-            <FormValidationComponent id="form-1" />
-          </PreviewCard>
-        </Block>
+        {renderValidationBlock(
+          "Validation - Regular Style",
+          "Below example helps you to build your own form in a nice way.",
+          "form-1"
+        )}
 
-        <Block size="lg">
-          <BlockHead>
-            <BlockHeadContent>
-              <BlockTitle tag="h5">Validation - Alternate Style</BlockTitle>
-              <BlockDes>
-                <p>Below example helps you to build your own form nice way.</p>
-              </BlockDes>
-            </BlockHeadContent>
-          </BlockHead>
-          <PreviewCard>
-            <FormValidationComponent id="form-2" alter />
-          </PreviewCard>
-        </Block>
+        {renderValidationBlock(
+          "Validation - Alternate Style",
+          "Below example helps you to build your own form in a nice way.",
+          "form-2",
+          true
+        )}
       </Content>
-    </React.Fragment>
+    </>
   );
 };
+
 export default FormValidation;
