@@ -1,61 +1,40 @@
-import React from "react";
-import Icon from "../icon/Icon";
-import { Pagination, PaginationLink, PaginationItem, Col } from "reactstrap";
+import React from "react"
+import Icon from "../icon/Icon"
+import { Pagination, PaginationLink, PaginationItem } from "reactstrap"
 
 const PaginationComponent = ({ itemPerPage, totalItems, paginate, currentPage }) => {
-  const pageNumbers = [];
+  const pageCount = Math.ceil(totalItems / itemPerPage)
+  const pageNumbers = Array.from({ length: pageCount }, (_, i) => i + 1)
 
-  for (let i = 1; i <= Math.ceil(totalItems / itemPerPage); i++) {
-    pageNumbers.push(i);
+  const getPageList = () => {
+    if (pageCount <= 5) return pageNumbers
+    if (currentPage <= 4) return [1, 2, 3, 4, 5, "...", pageCount]
+    if (currentPage >= pageCount - 3) return [1, "...", ...pageNumbers.slice(pageCount - 5)]
+    return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", pageCount]
   }
 
-  const paginationNumber = () => {
-    if (pageNumbers.length <= 5) {
-      return pageNumbers;
-    } else if (pageNumbers.length >= 5 && currentPage <= 4) {
-      return [1, 2, 3, 4, 5, '...', pageNumbers[pageNumbers.length - 1]];
-    } else if (pageNumbers.length >= 5 && currentPage >= pageNumbers[pageNumbers.length - 4]) {
-      return [1, '...', pageNumbers[pageNumbers.length - 5], pageNumbers[pageNumbers.length - 4], pageNumbers[pageNumbers.length - 3], pageNumbers[pageNumbers.length - 2], pageNumbers[pageNumbers.length - 1]];
-    } else if (pageNumbers.length > 5 && currentPage > 4 && currentPage < pageNumbers[pageNumbers.length - 4]) {
-      return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', pageNumbers[pageNumbers.length - 1]];
-    }
-  };
+  const pageList = getPageList()
 
-  let paginationItms = paginationNumber();
-
-  const firstPage = () => {
-    paginate(1);
-  };
-
-  const lastPage = () => {
-    paginate(pageNumbers[pageNumbers.length - 1]);
-  };
-
-  const nextPage = () => {
-    paginate(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    paginate(currentPage - 1);
-  };
+  const firstPage = () => paginate(1)
+  const lastPage = () => paginate(pageCount)
+  const nextPage = () => paginate(currentPage + 1)
+  const prevPage = () => paginate(currentPage - 1)
 
   return (
     <Pagination aria-label="Page navigation example">
       <div className="dataTables_info d-flex align-items-center me-2" role="status" aria-live="polite">
         {Number.isFinite(itemPerPage) && Number.isFinite(currentPage) && Number.isFinite(totalItems) && (
           <span className="d-none d-sm-block">
-            Showing {itemPerPage * (currentPage - 1) + 1} -{" "}
-            {Math.min(itemPerPage * currentPage, totalItems)} of {totalItems}
+            Showing {itemPerPage * (currentPage - 1) + 1} - {Math.min(itemPerPage * currentPage, totalItems)} of {totalItems}
           </span>
         )}
-
       </div>
       <PaginationItem disabled={currentPage === 1}>
         <PaginationLink
           className="page-link-first"
-          onClick={(ev) => {
-            ev.preventDefault();
-            firstPage();
+          onClick={e => {
+            e.preventDefault()
+            firstPage()
           }}
           href="#first"
         >
@@ -65,51 +44,51 @@ const PaginationComponent = ({ itemPerPage, totalItems, paginate, currentPage })
       <PaginationItem disabled={currentPage === 1}>
         <PaginationLink
           className="page-link-prev"
-          onClick={(ev) => {
-            ev.preventDefault();
-            prevPage();
+          onClick={e => {
+            e.preventDefault()
+            prevPage()
           }}
           href="#prev"
         >
           <Icon name="chevron-left" />
         </PaginationLink>
       </PaginationItem>
-      {paginationItms.map((item, index) => (
+      {pageList.map((item, i) => (
         <PaginationItem
-          key={index}
+          key={i}
           disabled={isNaN(item)}
           className={`d-none d-sm-block ${currentPage === item ? "active" : ""}`}
         >
           <PaginationLink
             tag="a"
             href="#pageitem"
-            onClick={(ev) => {
-              ev.preventDefault();
-              paginate(item);
+            onClick={e => {
+              e.preventDefault()
+              if (!isNaN(item)) paginate(item)
             }}
           >
             {item}
           </PaginationLink>
         </PaginationItem>
       ))}
-      <PaginationItem disabled={currentPage === pageNumbers[pageNumbers.length - 1]}>
+      <PaginationItem disabled={currentPage === pageCount}>
         <PaginationLink
           className="page-link-next"
-          onClick={(ev) => {
-            ev.preventDefault();
-            nextPage();
+          onClick={e => {
+            e.preventDefault()
+            nextPage()
           }}
           href="#next"
         >
           <Icon name="chevron-right" />
         </PaginationLink>
       </PaginationItem>
-      <PaginationItem disabled={currentPage === pageNumbers[pageNumbers.length - 1]}>
+      <PaginationItem disabled={currentPage === pageCount}>
         <PaginationLink
           className="page-link-last"
-          onClick={(ev) => {
-            ev.preventDefault();
-            lastPage();
+          onClick={e => {
+            e.preventDefault()
+            lastPage()
           }}
           href="#last"
         >
@@ -117,6 +96,7 @@ const PaginationComponent = ({ itemPerPage, totalItems, paginate, currentPage })
         </PaginationLink>
       </PaginationItem>
     </Pagination>
-  );
-};
-export default PaginationComponent;
+  )
+}
+
+export default PaginationComponent
