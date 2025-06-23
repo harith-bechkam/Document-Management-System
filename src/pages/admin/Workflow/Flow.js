@@ -31,80 +31,56 @@ import { triggerInlinePrintWorkflow } from "../../../redux/folderSlice";
 import AddDescription from "./WordkflowDescription";
 import Swal from "sweetalert2";
 import JoyrideComp from "../../app/file-manager/modals/Joyride";
+import { Handle, Position } from 'reactflow';
 
+const CustomNode = ({ data, isConnectable }) => {
+  const truncate = (str, len) => (str?.length > len ? `${str.substring(0, len)}...` : str);
 
-const custom_node = ({ data, isConnectable }) => {
-  const truncate = (str, len) => {
-    return str?.length > len ? `${str?.substring(0, len)}...` : str;
-  };
+  const handlePositions = ['Top', 'Bottom', 'Left', 'Right'];
+
   return (
-    <>
-      {/* {data.level !== undefined ? (
-        <div className="level ">{data.level}</div>
-      ) : (
-        ""
-      )} */}
-      <div
-        className="text-updater-node main_node draw-border"
-        style={{
-          borderRadius: "12px",
-        }}
-      >
+    <div
+      className="text-updater-node main_node draw-border"
+      style={{ borderRadius: '12px' }}
+    >
+      {/* Optional display of level */}
+      {data.level !== undefined && (
+        <div className="level">{data.level}</div>
+      )}
+
+      {/* Target Handles */}
+      {handlePositions.map((pos) => (
         <Handle
+          key={`target-${pos.toLowerCase()}`}
           type="target"
-          id="target-top"
-          position={Position.Top}
-          isConnectable={true}
+          id={`target-${pos.toLowerCase()}`}
+          position={Position[pos]}
+          isConnectable={isConnectable}
         />
-        <Handle
-          type="target"
-          id="target-bottom"
-          position={Position.Bottom}
-          isConnectable={true}
-        />
-        <Handle
-          type="target"
-          id="target-left"
-          position={Position.Left}
-          isConnectable={true}
-        />
-        <Handle
-          type="target"
-          id="target-right"
-          position={Position.Right}
-          isConnectable={true}
-        />
-        <div>
-          <center> <label htmlFor="text" title={data.label}>{truncate(data.label, 15)}</label> </center>
-        </div>
-        <Handle
-          type="source"
-          position={Position.Top}
-          id="source-top"
-          isConnectable={true}
-        />
-        <Handle
-          type="source"
-          position={Position.Bottom}
-          id="source-bottom"
-          isConnectable={true}
-        />
-        <Handle
-          type="source"
-          position={Position.Left}
-          id="source-left"
-          isConnectable={true}
-        />
-        <Handle
-          type="source"
-          position={Position.Right}
-          id="source-right"
-          isConnectable={true}
-        />
+      ))}
+
+      <div>
+        <center>
+          <label htmlFor="text" title={data.label}>
+            {truncate(data.label, 15)}
+          </label>
+        </center>
       </div>
-    </>
+
+      {/* Source Handles */}
+      {handlePositions.map((pos) => (
+        <Handle
+          key={`source-${pos.toLowerCase()}`}
+          type="source"
+          id={`source-${pos.toLowerCase()}`}
+          position={Position[pos]}
+          isConnectable={isConnectable}
+        />
+      ))}
+    </div>
   );
 };
+
 const nodeTypes = {
   customNode: custom_node,
 };
